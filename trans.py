@@ -10,8 +10,8 @@ def MD5(s):
     return md.hexdigest()
 
 def trans(string):
-    sign = MD5('你的百度翻译api的appid' + string + '1435660288你的百度翻译api密钥')
-    api = f'http://api.fanyi.baidu.com/api/trans/vip/translate?q={string}&from=zh&to=en&appid=20200417000422755&salt=1435660288&sign={sign}'
+    sign = MD5('你的百度翻译api的appid' + string + '1435660288' + 你的百度翻译api密钥') #这里的1435660288为随机数，可以随便填写，与api中的salt一致即可
+    api = f'http://api.fanyi.baidu.com/api/trans/vip/translate?q={string}&from=zh&to=en&appid=' + '你的百度翻译api的appid' + '&salt=1435660288&sign=' + sign
     res = requests.get(api)
     return res.json()['trans_result'][0]['dst']
 
