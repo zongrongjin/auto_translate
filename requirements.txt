@@ -1,0 +1,6 @@
+keyboard
+requests
+pywin32
+pyhook
+pyuserinput
+pyautogui
